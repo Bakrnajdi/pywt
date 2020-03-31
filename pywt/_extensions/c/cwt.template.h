@@ -39,5 +39,8 @@ void CAT(TYPE, _fbsp)(const TYPE * const restrict input, TYPE * const restrict o
 
 void CAT(TYPE, _cmor)(const TYPE * const restrict input, TYPE * const restrict output_r, TYPE * const restrict output_i, const size_t N,
                               const TYPE  FB, const TYPE  FC);
+
+void CAT(TYPE, _ben)(const TYPE * const restrict input, TYPE * const restrict output_r, TYPE * const restrict output_i, const size_t N,
+                              const TYPE  FC);
 #endif /* TYPE */
 #undef restrict
