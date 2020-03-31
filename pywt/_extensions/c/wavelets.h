@@ -32,7 +32,8 @@ typedef enum {
     CGAU,
     SHAN,
     FBSP,
-    CMOR
+    CMOR,
+    BEN
 } WAVELET_NAME;
 
 
@@ -91,25 +92,4 @@ int is_discrete_wavelet(WAVELET_NAME name);
 
 /*
  * Allocate Wavelet struct and set its attributes
- * name - (currently) a character codename of a wavelet family
- * order - order of the wavelet (ie. coif3 has order 3)
- */
-DiscreteWavelet* discrete_wavelet(WAVELET_NAME name, unsigned int order);
-ContinuousWavelet* continuous_wavelet(WAVELET_NAME name, unsigned int order);
-/*
- * Allocate blank Discrete Wavelet with zero-filled filters of given length
- */
-DiscreteWavelet* blank_discrete_wavelet(size_t filters_length);
-
-ContinuousWavelet* blank_continuous_wavelet(void);
-
-/* Deep copy Discrete Wavelet */
-DiscreteWavelet* copy_discrete_wavelet(DiscreteWavelet* base);
-
-/*
- * Free wavelet struct. Use this to free Wavelet allocated with
- * wavelet(...) or blank_wavelet(...) functions.
- */
-void free_discrete_wavelet(DiscreteWavelet *wavelet);
-
-void free_continuous_wavelet(ContinuousWavelet *wavelet);
+ * name - (c
