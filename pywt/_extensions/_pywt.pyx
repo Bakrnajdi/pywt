@@ -694,8 +694,8 @@ cdef public class ContinuousWavelet [type ContinuousWaveletType, object Continuo
             self.dt = np.float64
         else:
             self.dt = dtype
-        if len(self.name) >= 4 and self.name[:4] in ['cmor', 'shan', 'fbsp']:
-            base_name = self.name[:4]
+        if len(self.name) >= 5 and self.name[:5] in ['cmor', 'shan', 'fbsp','ben']:
+            base_name = self.name[:5]
             if base_name == self.name:
                 if base_name == 'fbsp':
                     msg = (
