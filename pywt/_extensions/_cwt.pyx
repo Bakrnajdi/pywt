@@ -76,7 +76,7 @@ cpdef cwt_psi_single(data_t[::1] data, ContinuousWavelet wavelet, size_t output_
             psi_i = np.zeros(output_len, np.float64)
             center_frequency = wavelet.center_frequency
             with nogil:
-                c_wt.double_cmor(&data[0], <double *>psi_r.data, <double *>psi_i.data, data_size, bandwidth_frequency, center_frequency)
+                c_wt.double_ben(&data[0], <double *>psi_r.data, <double *>psi_i.data, data_size,  center_frequency)
             return (psi_r, psi_i)
 
     elif data_t is np.float32_t:
