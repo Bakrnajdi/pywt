@@ -204,4 +204,6 @@ cdef extern from "c/cwt.h":
 
     cdef void float_cmor(const float * const input, float * const output_r, float * const output_i, const size_t N,
                         float FB, float FC) nogil
+    cdef void float_ben(const float * const input, float * const output_r, float * const output_i, const size_t N,
+                        float FC) nogil
 
