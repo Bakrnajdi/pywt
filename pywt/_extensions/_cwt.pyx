@@ -71,6 +71,12 @@ cpdef cwt_psi_single(data_t[::1] data, ContinuousWavelet wavelet, size_t output_
             center_frequency = wavelet.center_frequency
             with nogil:
                 c_wt.double_cmor(&data[0], <double *>psi_r.data, <double *>psi_i.data, data_size, bandwidth_frequency, center_frequency)
+        elif wavelet.short_family_name == "ben":
+            psi_r = np.zeros(output_len, np.float64)
+            psi_i = np.zeros(output_len, np.float64)
+            center_frequency = wavelet.center_frequency
+            with nogil:
+                c_wt.double_cmor(&data[0], <double *>psi_r.data, <double *>psi_i.data, data_size, bandwidth_frequency, center_frequency)
             return (psi_r, psi_i)
 
     elif data_t is np.float32_t:
@@ -126,5 +132,11 @@ cpdef cwt_psi_single(data_t[::1] data, ContinuousWavelet wavelet, size_t output_
             center_frequency = wavelet.center_frequency
             with nogil:
                 c_wt.float_cmor(&data[0], <float *>psi_r.data, <float *>psi_i.data, data_size, bandwidth_frequency, center_frequency)
+        elif wavelet.short_family_name == "ben":
+            psi_r = np.zeros(output_len, np.float32)
+            psi_i = np.zeros(output_len, np.float32)
+            center_frequency = wavelet.center_frequency
+            with nogil:
+                c_wt.float_ben(&data[0], <float *>psi_r.data, <float *>psi_i.data, data_size, bandwidth_frequency, center_frequency)
             return (psi_r, psi_i)
 
