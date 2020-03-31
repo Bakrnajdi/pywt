@@ -43,7 +43,7 @@ int is_discrete_wavelet(WAVELET_NAME name)
         case CMOR:
             return 0;
         case BEN :
-            reutnr 0;
+            return 0;
         default:
             return -1;
     }
