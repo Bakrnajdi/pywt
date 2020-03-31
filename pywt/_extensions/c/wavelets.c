@@ -513,7 +513,7 @@ ContinuousWavelet* continuous_wavelet(WAVELET_NAME name, unsigned int order)
             w->complex_cwt = 1;
             w->lower_bound = -8;
             w->upper_bound = 8;
-            w->center_frequency = 0.5;
+            w->center_frequency = 0.7;
             w->bandwidth_frequency = 1;
             w->fbsp_order = 0;
             break;
