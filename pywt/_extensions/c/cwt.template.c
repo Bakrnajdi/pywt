@@ -226,8 +226,8 @@ void CAT(TYPE, _ben)(const TYPE * const restrict input, TYPE * const restrict ou
     size_t i = 0;
     for (i = 0; i < N; i++)
     {
-        output_r[i] = (1-CAT(TYPE, _pow)(input[i], 2.0))*CAT(TYPE, _exp)(-CAT(TYPE, _pow)(input[i], 2.0)/2)*2/(CAT(TYPE, _sqrt)(3))*CAT(TYPE,_pow((CAT(TYPE, _pi)(),1/4)));
-        output_i[i] = (1-CAT(TYPE, _pow)(input[i], 2.0))*CAT(TYPE, _exp)(-CAT(TYPE, _pow)(input[i], 2.0)/2)*2/(CAT(TYPE, _sqrt)(3))*CAT(TYPE,_pow((CAT(TYPE, _pi)(),1/4)));
+        output_r[i] = (1-CAT(TYPE, _pow)(input[i], 2.0))*CAT(TYPE, _exp)(-CAT(TYPE, _pow)(input[i], 2.0)/2)*2/(CAT(TYPE, _sqrt)(3))*CAT(TYPE,_pow)(CAT(TYPE, _pi)(),1/4)));
+        output_i[i] = (1-CAT(TYPE, _pow)(input[i], 2.0))*CAT(TYPE, _exp)(-CAT(TYPE, _pow)(input[i], 2.0)/2)*2/(CAT(TYPE, _sqrt)(3))*CAT(TYPE,_pow)(CAT(TYPE, _pi)(),1/4)));
 
     }
 }
