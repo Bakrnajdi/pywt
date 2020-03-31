@@ -96,10 +96,6 @@ cpdef cwt_psi_single(data_t[::1] data, ContinuousWavelet wavelet, size_t output_
             with nogil:
                 c_wt.float_morl(&data[0], <float *>psi.data, data_size)
             return psi
-        elif wavelet.short_family_name == "ben":
-            psi = np.zeros(output_len, np.float32)
-            with nogil:
-                c_wt.float_ben(&data[0], <float *>psi.data, data_size)
             return psi
         elif wavelet.short_family_name == "cgau":
             psi_r = np.zeros(output_len, np.float32)
