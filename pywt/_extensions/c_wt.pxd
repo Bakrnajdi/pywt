@@ -184,7 +184,7 @@ cdef extern from "c/cwt.h":
                                   int M, double FB, double FC) nogil
     cdef void double_cmor(const double * const input, double * const output_r, double * const output_i, const size_t N,
                                   double FB, double FC) nogil
-    cdef void double_cmor(const double * const input, double * const output_r, double * const output_i, const size_t N,
+    cdef void double_ben(const double * const input, double * const output_r, double * const output_i, const size_t N,
                                   double FC) nogil
 
     cdef void float_gaus(const float * const input, float * const output, const size_t N,
